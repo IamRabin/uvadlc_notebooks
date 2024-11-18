@@ -7,7 +7,7 @@ Welcome to the UvA Deep Learning Tutorials!
 ===========================================
 
 | *Course website*: https://uvadlc.github.io/
-| *Course edition*: DL1 - Fall 2021, DL2 - Spring 2022, Being kept up to date
+| *Course edition*: DL1 - Fall 2024, DL2 - Spring 2023, Being kept up to date
 | *Repository*: https://github.com/phlippe/uvadlc_notebooks
 | *Recordings*: `YouTube Playlist <https://www.youtube.com/playlist?list=PLdlPlO1QhMiAkedeu0aJixfkknLRxk1nA>`_
 | *Author*: Phillip Lippe
@@ -31,27 +31,26 @@ Further, the content presented will be relevant for the graded assignment and ex
 The tutorials have been integrated as official tutorials of PyTorch Lightning.
 Thus, you can also view them in `their documentation <https://pytorch-lightning.readthedocs.io/en/latest/>`_.
 
-Schedule (Deep Learning 1)
---------------------------
+Schedule (Deep Learning 1, edition 2024)
+----------------------------------------
 
-+------------------------------------------+---------------------------------------------------+
-| **Date**                                 | **Notebook**                                      |
-+------------------------------------------+---------------------------------------------------+
-| Thursday, 4. November 2021, 13.00-15.00  | Tutorial 2: Introduction to PyTorch               |
-|                                          | Guide 1: Working with the Lisa cluster            |
-+------------------------------------------+---------------------------------------------------+
-| Thursday, 11. November 2021, 13.00-14.00 | Tutorial 3: Activation functions                  |
-+------------------------------------------+---------------------------------------------------+
-| Thursday, 18. November 2021, 13.00-14.00 | Tutorial 4: Optimization and Initialization       |
-+------------------------------------------+---------------------------------------------------+
-| Thursday, 25. November 2021, 13.00-14.00 | Tutorial 5: Inception, ResNet and DenseNet        |
-+------------------------------------------+---------------------------------------------------+
-| Thursday, 2. December 2021, 13.00-14.00  | Tutorial 7: Graph Neural Networks                 |
-+------------------------------------------+---------------------------------------------------+
-| Thursday, 9. December 2021, 13.00-14.00  | Tutorial 6: Transformers and Multi-Head Attention |
-+------------------------------------------+---------------------------------------------------+
-| Thursday, 16. December 2021, 13.00-14.00 | Tutorial 9: Deep Autoencoders                     |
-+------------------------------------------+---------------------------------------------------+
++------------------------------------------+---------------------------------------------------------------+
+| **Date**                                 | **Notebook**                                                  |
++------------------------------------------+---------------------------------------------------------------+
+| Tuesday, 29. October 2024, 09:00-10:00   | Tutorial 2: Introduction to PyTorch                           |
++------------------------------------------+---------------------------------------------------------------+
+| Monday, 4. November 2024, 15:00-16:00    | Tutorial 3: Activation functions                              |
++------------------------------------------+---------------------------------------------------------------+
+| Monday, 11. November 2024, 15:00-16:00   | Tutorial 4: Optimization and Initialization                   |
++------------------------------------------+---------------------------------------------------------------+
+| Monday, 18. November 2024, 15:00-16:00   | Tutorial 5: Inception, ResNet and DenseNet                    |
++------------------------------------------+---------------------------------------------------------------+
+| Monday, 25. November 2024, 15:00-16:00   | Tutorial 6: Transformers and Multi-Head Attention             |
++------------------------------------------+---------------------------------------------------------------+
+| Monday, 2. December 2024, 15:00-16:00    | Tutorial 7: Graph Neural Networks                             |
++------------------------------------------+---------------------------------------------------------------+
+| Monday, 9. December 2024, 15:00-16:00    | Tutorial 17: Self-Supervised Contrastive Learning with SimCLR |
++------------------------------------------+---------------------------------------------------------------+
 
 How to run the notebooks
 ------------------------
@@ -63,9 +62,9 @@ However, we suggest that you also give them a try and run them yourself. There a
 
 - **Google Colab**: If you prefer to run the notebooks on a different platform than your own computer, or want to experiment with GPU support, we recommend using `Google Colab <https://colab.research.google.com/notebooks/intro.ipynb#recent=true>`_. Each notebook on this documentation website has a badge with a link to open it on Google Colab. Remember to enable GPU support before running the notebook (:code:`Runtime -> Change runtime type`). Each notebook can be executed independently, and doesn't require you to connect your Google Drive or similar. However, when closing the session, changes might be lost if you don't save it to your local computer or have copied the notebook to your Google Drive beforehand.
 
-- **Lisa cluster**: If you want to train your own (larger) neural networks based on the notebooks, you can make use of the Lisa cluster. However, this is only suggested if you really want to train a new model, and use the other two options to go through the discussion and analysis of the models. Lisa might not allow you with your student account to run Jupyter notebooks directly on the gpu_shared partition. Instead, you can first convert the notebooks to a script using :code:`jupyter nbconvert --to script ...ipynb`, and then start a job on Lisa for running the script. A few advices when running on Lisa:
+- **Snellius cluster**: If you want to train your own (larger) neural networks based on the notebooks, you can make use of the Snellius cluster. However, this is only suggested if you really want to train a new model, and use the other two options to go through the discussion and analysis of the models. Snellius might not allow you with your student account to run Jupyter notebooks directly on the gpu partition. Instead, you can first convert the notebooks to a script using :code:`jupyter nbconvert --to script ...ipynb`, and then start a job on Snellius for running the script. A few advices when running on Snellius:
 
-   - Disable the tqdm statements in the notebook. Otherwise your slurm output file might overflow and be several MB large. In PyTorch Lightning, you can do this by setting :code:`progress_bar_refresh_rate=0` in the trainer.
+   - Disable the tqdm statements in the notebook. Otherwise your slurm output file might overflow and be several MB large. In PyTorch Lightning, you can do this by setting :code:`enable_progress_bar=False` in the trainer.
    - Comment out the matplotlib plotting statements, or change :code:`plt.show()` to :code:`plt.savefig(...)`.
 
 Tutorial-Lecture alignment
@@ -73,7 +72,7 @@ Tutorial-Lecture alignment
 
 We will discuss 7 of the tutorials in the course, spread across lectures to cover something from every area. You can align the tutorials with the lectures based on their topics. The list of tutorials in the Deep Learning 1 course is:
 
-- Guide 1: Working with the Lisa cluster
+- Guide 1: Working with the Snellius cluster
 - Tutorial 2: Introduction to PyTorch
 - Tutorial 3: Activation functions
 - Tutorial 4: Optimization and Initialization
@@ -97,10 +96,10 @@ This is the first time we present these tutorials during the Deep Learning cours
 
 If you find the tutorials helpful and would like to cite them, you can use the following bibtex::
 
-   @misc{lippe2022uvadlc,
+   @misc{lippe2024uvadlc,
       title        = {{UvA Deep Learning Tutorials}},
       author       = {Phillip Lippe},
-      year         = 2022,
+      year         = 2024,
       howpublished = {\url{https://uvadlc-notebooks.readthedocs.io/en/latest/}}
    }
 
@@ -113,6 +112,22 @@ If you find the tutorials helpful and would like to cite them, you can use the f
    tutorial_notebooks/guide2/Research_Projects
    tutorial_notebooks/guide3/Debugging_PyTorch
    tutorial_notebooks/guide4/Research_Projects_with_JAX
+
+.. toctree::
+   :caption: Training Models at Scale
+   :maxdepth: 2
+
+   tutorial_notebooks/scaling/JAX/overview
+   tutorial_notebooks/scaling/JAX/single_gpu_techniques
+   tutorial_notebooks/scaling/JAX/single_gpu_transformer
+   tutorial_notebooks/scaling/JAX/data_parallel_intro
+   tutorial_notebooks/scaling/JAX/data_parallel_fsdp
+   tutorial_notebooks/scaling/JAX/pipeline_parallel_simple
+   tutorial_notebooks/scaling/JAX/pipeline_parallel_looping
+   tutorial_notebooks/scaling/JAX/tensor_parallel_simple
+   tutorial_notebooks/scaling/JAX/tensor_parallel_async
+   tutorial_notebooks/scaling/JAX/tensor_parallel_transformer
+   tutorial_notebooks/scaling/JAX/3d_parallelism
 
 .. toctree::
    :caption: Deep Learning 1 (PyTorch)
@@ -138,12 +153,16 @@ If you find the tutorials helpful and would like to cite them, you can use the f
    :maxdepth: 2
 
    tutorial_notebooks/JAX/tutorial2/Introduction_to_JAX
+   tutorial_notebooks/JAX/tutorial3/Activation_Functions
+   tutorial_notebooks/JAX/tutorial4/Optimization_and_Initialization
    tutorial_notebooks/JAX/tutorial5/Inception_ResNet_DenseNet
    tutorial_notebooks/JAX/tutorial6/Transformers_and_MHAttention
    tutorial_notebooks/JAX/tutorial7/GNN_overview
    tutorial_notebooks/JAX/tutorial9/AE_CIFAR10
    tutorial_notebooks/JAX/tutorial11/NF_image_modeling
+   tutorial_notebooks/JAX/tutorial12/Autoregressive_Image_Modeling
    tutorial_notebooks/JAX/tutorial15/Vision_Transformer
+   tutorial_notebooks/JAX/tutorial17/SimCLR
 
 .. toctree::
    :caption: Deep Learning 2
@@ -157,7 +176,8 @@ If you find the tutorials helpful and would like to cite them, you can use the f
    tutorial_notebooks/DL2/Advanced_Generative_Models/Normalizing_flows/advancednormflow.ipynb
    tutorial_notebooks/DL2/High-performant_DL/hyperparameter_search/hpdlhyperparam.ipynb
    tutorial_notebooks/DL2/High-performant_DL/Multi_GPU/hpdlmultigpu.ipynb
-   tutorial_notebooks/DL2/Bayesian_Neural_Networks/Complete_DLII_BNN_2_2.ipynb
+   tutorial_notebooks/DL2/Bayesian_Neural_Networks/dl2_bnn_tut1_students_with_answers.ipynb
+   tutorial_notebooks/DL2/Bayesian_Neural_Networks/dl2_bnn_tut2_student_with_answers.ipynb
    tutorial_notebooks/DL2/Dynamical_Neural_Networks/Complete_DNN_2_1.ipynb
    tutorial_notebooks/DL2/Dynamical_Neural_Networks/Complete_DNN_2_2.ipynb
    tutorial_notebooks/DL2/Dynamical_systems/dynamical_systems_neural_odes.ipynb
@@ -165,4 +185,5 @@ If you find the tutorials helpful and would like to cite them, you can use the f
    tutorial_notebooks/DL2/sampling/subsets.ipynb
    tutorial_notebooks/DL2/sampling/permutations.ipynb
    tutorial_notebooks/DL2/sampling/graphs.ipynb
+   tutorial_notebooks/DL2/Causality_and_CRL/citris-tutorial.ipynb
 
